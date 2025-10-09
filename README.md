@@ -5,9 +5,6 @@ Make cheatsheets and search them with `cmdmenu`.
 
 Similar to [cheat](https://github.com/chrisallenlane/cheat) but different. Even more similar to the newer [navi](https://github.com/denisidoro/navi).
 
-See also
-* [TheR1D/shell_gpt](https://github.com/TheR1D/shell_gpt#shell-commands)
-
 
 # Install
 
