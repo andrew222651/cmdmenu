@@ -50,28 +50,10 @@ var ask = function (lastAnswers) {
   if (!task.subtasks) {
     console.log(task.cmdText);
     if (task.numParams === 0) {
-      inq.prompt({
-        type: 'confirm',
-        name: 'run',
-        message: 'Run?',
-        default: true
-      })
-      .then(function (answers) {
-        if (answers['run']) shell.exec(task.cmdText)
-      });
+      shell.exec(task.cmdText);
     } else {
-      inq.prompt({
-        type: 'confirm',
-        name: 'copy',
-        message: 'Copy?',
-        default: true
-      })
-      .then(function (answers) {
-        if (answers['copy']) {
-          clipboardy.writeSync(task.cmdText + '  # ' + task.name);
-        }
-      })
-     .then( () => process.exit() );
+      clipboardy.writeSync(task.cmdText + '  # ' + task.name);
+      process.exit();
     }
   } else {
     return (inq.prompt({
